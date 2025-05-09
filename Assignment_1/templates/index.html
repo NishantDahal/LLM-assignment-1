@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Processor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>NLP Preprocessing Demo</h1>
+        
+        <div class="input-section">
+            <label for="text-input">Enter Text:</label>
+            <textarea id="text-input" rows="5" placeholder="Type or paste your text here..."></textarea>
+            
+            <label for="operation-select">Select Operation:</label>
+            <select id="operation-select">
+                <option value="all">All Operations</option>
+                <option value="tokenize">Tokenization</option>
+                <option value="lemmatize">Lemmatization</option>
+                <option value="stem">Stemming</option>
+                <option value="pos_tag">POS Tagging</option>
+                <option value="ner">Named Entity Recognition</option>
+            </select>
+            
+            <button id="process-btn">Process Text</button>
+        </div>
+
+        <div class="results-section">
+            <h2>Results:</h2>
+            <pre id="output-display"></pre>
+        </div>
+
+        <hr>
+
+        <div class="comparison-section">
+            <h2>Compare Stemming & Lemmatization</h2>
+            <label for="words-input">Enter words (comma-separated):</label>
+            <input type="text" id="words-input" placeholder="e.g., running, studies, better">
+            <button id="compare-btn">Compare</button>
+            <h3>Comparison Table:</h3>
+            <table id="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Stem</th>
+                        <th>Lemma</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+            <h3>Explanation:</h3>
+            <pre id="comparison-explanation"></pre>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
