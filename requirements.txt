@@ -3,5 +3,9 @@ nltk
 scikit-learn
 gensim
 numpy
+pandas
+tensorflow>=2.0
+matplotlib
+rouge
 # Add other specific versions if necessary, e.g.:
 # Flask-CORS>=3.0.10 
