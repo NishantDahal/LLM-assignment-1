@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2: Word Embeddings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_assignment2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Embedding Explorer</h1>
+        
+        <div id="modelStatus" class="model-status">
+            <span class="status-loading">⟳ Checking model status...</span>
+        </div>
+
+        <div class="card">
+            <div class="control-panel">
+                <div class="form-group">
+                    <label for="wordInput">Enter Word:</label>
+                    <input type="text" id="wordInput" placeholder="e.g., king, python, learning">
+                </div>
+
+                <div class="form-group">
+                    <label for="embeddingTypeSelect">Embedding Type:</label>
+                    <select id="embeddingTypeSelect">
+                        <option value="glove">GloVe</option>
+                        <option value="tfidf">TF-IDF</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button id="getEmbeddingButton">Get Embedding & Neighbors</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <div class="results-panel">
+                <h2>Word Embedding</h2>
+                <div id="embeddingResult">
+                    <p>Enter a word and click the button to see its embedding.</p>
+                </div>
+            </div>
+            
+            <div class="results-panel">
+                <h2>Nearest Neighbors</h2>
+                <div id="neighborsResult">
+                    <p>Nearest neighbors will appear here after you search for a word.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Embedding Visualization</h2>
+            
+            <div class="viz-controls">
+                <div class="form-group">
+                    <label for="vizMethodSelect">Dimensionality Reduction:</label>
+                    <select id="vizMethodSelect">
+                        <option value="tsne">t-SNE</option>
+                        <option value="pca">PCA</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vizTypeSelect">Embedding Type:</label>
+                    <select id="vizTypeSelect">
+                        <option value="glove">GloVe</option>
+                        <option value="tfidf">TF-IDF (Documents)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="visualization" class="visualization">
+                <p>Visualization will appear here once the models are loaded.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>About This Project</h2>
+            <p>This web app demonstrates word embeddings using two methods:</p>
+            <ul>
+                <li><strong>GloVe</strong>: Global Vectors for Word Representation, a pre-trained model that captures semantic relationships between words.</li>
+                <li><strong>TF-IDF</strong>: Term Frequency-Inverse Document Frequency, which weighs the importance of words within documents in a corpus.</li>
+            </ul>
+            <p>Enter words to see their vector representations and find semantically similar words. The visualization uses dimensionality reduction techniques (t-SNE and PCA) to display the high-dimensional word vectors in 2D space.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script_assignment2.js') }}"></script>
+</body>
+</html> 

@@ -1,2 +1,7 @@
 Flask>=2.0
-nltk>=3.6 
+nltk
+scikit-learn
+gensim
+numpy
+# Add other specific versions if necessary, e.g.:
+# Flask-CORS>=3.0.10 
